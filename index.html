@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mail Karo - AI Email Writer</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="All Images/Logo.png" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!--Styles -->
+  <link rel="stylesheet" href="Homepage CSS/navbar.css">
+  <link rel="stylesheet" href="Homepage CSS/hero.css">
+  <link rel="stylesheet" href="Homepage CSS/prompt.css">
+  <link rel="stylesheet" href="Homepage CSS/footer.css">
+  <link rel="stylesheet" href="Homepage CSS/scroll.css">
+
+</head>
+<body>
+  <!-- ✅ Navbar Section Start -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo-area">
+        <img src="All Images/Logo.png" alt="Mail Karo Logo" class="logo" />
+        <span class="brand-name">Mail Karo</span>
+      </div>
+
+      <button class="menu-btn" id="menu-btn" aria-label="Toggle Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact" class="cta">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- ✅ Navbar Section End -->
+
+  <!-- ✅ Hero Section Start -->
+<section class="hero" id="home">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">Write Smarter. <span>Mail Faster.</span></h1>
+      <p class="hero-subtitle">
+        Experience the power of <strong>AI-driven email writing</strong>.  
+        Save time, sound professional, and impress your readers — instantly.
+      </p>
+      <a href="#prompt" class="hero-btn">Get Started</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="All Images/ai-hero.png" alt="AI Email Assistant" />
+      <div class="glow"></div>
+    </div>
+  </div>
+</section>
+<!-- ✅ Hero Section End -->
+
+<!-- ✅ Prompt & Output Section Start -->
+<section class="prompt-section" id="prompt">
+  <div class="prompt-container">
+    <h2 class="prompt-title">Generate Your Email Instantly</h2>
+    <p class="prompt-subtitle">Enter your topic or idea below and let AI craft a perfect email for you.</p>
+
+    <div class="prompt-box">
+      <input type="text" id="promptInput" placeholder="e.g. Follow up after meeting with client..." />
+      <button id="generateBtn">Generate</button>
+    </div>
+
+    <div class="output-box">
+      <div class="output-header">
+        <h3>Generated Email</h3>
+        <button id="copyBtn">Copy</button>
+      </div>
+      <p id="outputText">Your AI-generated email will appear here...</p>
+    </div>
+  </div>
+</section>
+<!-- ✅ Prompt & Output Section End -->
+
+<!-- ✅ Footer Section Start -->
+<!-- Font Awesome CDN for icons -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="All Images/Logo.png" alt="Mail Karo Logo">
+      <h2>Mail Karo</h2>
+      <p class="tagline">Write Smart • Send Fast</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="social-icons">
+      <a href="https://www.instagram.com/ltx_adarsh18" target="_blank" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/adarsh-jayprakash-mishra" target="_blank" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://www.github.com/Code-By-Adarsh/Mail-Karo" target="_blank" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+  <p class="footer-info">
+    <span class="founder">Founder: <strong>Adarsh Jayprakash Mishra</strong></span> |
+    <span class="ai-credit">Purely Made by AI</span> |
+    <span class="vibe">Vibe Coding © 2025</span>
+  </p>
+</div>
+</footer>
+<!-- ✅ Footer Section End -->
+
+<!-- ✅ Back to Top Button -->
+<button id="backToTop" aria-label="Back to top">
+  ↑
+</button>
+
+  <!-- Scripts -->
+  <script src="Homepage JS/navbar.js" defer></script>
+  <script src="Homepage JS/hero.js" defer></script>
+  <script src="Homepage JS/prompt.js" defer></script>
+  <script src="Homepage JS/footer.js" defer></script>
+  <script src="Homepage JS/scroll.js" defer></script>
+
+</body>
+</html>
