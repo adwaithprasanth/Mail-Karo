@@ -244,3 +244,27 @@
     width: 100%;
   }
 }
+
+/* ⭐ Word + Character Counter */
+.counter-box {
+  margin-top: 8px;
+  color: #B0B0B0;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 6px;
+  justify-content: flex-start;
+  opacity: 0.85;
+  font-family: "Poppins", sans-serif;
+}
+
+.counter-box span {
+  color: #B0B0B0;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .counter-box {
+    font-size: 0.85rem;
+    opacity: 0.9;
+  }
+}
