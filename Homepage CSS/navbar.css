@@ -326,3 +326,19 @@ body {
     transform: translateY(0);
   }
 }
+
+/* ==== Smooth Mobile Menu Slide Fix ==== */
+@media (max-width: 850px) {
+  .nav-links {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    display: block; /* Important: smooth animation ke lie display ko block rakho */
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+  }
+
+  .nav-links.active {
+    max-height: 500px; /* Enough height to open fully */
+    opacity: 1;
+  }
+}

@@ -3,7 +3,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menu-btn");
   const navLinks = document.getElementById("nav-links");
+  const navbar = document.querySelector(".navbar");
 
+  // Mobile menu toggle
   menuBtn.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 
@@ -13,9 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bars[2].classList.toggle("rotate2");
   });
 
-  // Smooth shrink on scroll (THEME SAFE)
-  const navbar = document.querySelector(".navbar");
-
+  // Navbar shrink on scroll
   window.addEventListener("scroll", () => {
     if (window.scrollY > 30) {
       navbar.style.background = "var(--bg)";
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Hamburger animation
+// Hamburger animation styles
 const style = document.createElement("style");
 style.innerHTML = `
 .bar.rotate1 { transform: translateY(7px) rotate(45deg); background-color: var(--accent); }
