@@ -9,10 +9,97 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const toneSelect = document.getElementById("toneSelect");
 
+  /* ⭐ Template Elements */
+  const templateSelect = document.getElementById("templateSelect");
+  const saveTemplateBtn = document.getElementById("saveTemplateBtn");
+  const savedGroup = document.getElementById("savedTemplatesGroup");
+
   let lastPrompt = "";
   let lastTone = "";
 
   generateBtn.innerText = "⚡ Generate";
+
+  /* ⭐ 15 Professional Templates */
+  const templates = {
+    job: "Write a job application email applying for the position of...",
+    complaint: "Write a complaint email regarding the issue of...",
+    followup: "Write a follow-up email after the previous discussion about...",
+    leave: "Write a leave request email for...",
+    apology: "Write an apology email for...",
+    meeting: "Write an email requesting a meeting for...",
+    offer: "Write an offer acceptance email for the role of...",
+    resignation: "Write a resignation email with a 1-month notice period...",
+    reminder: "Write a gentle reminder email about...",
+    support: "Write a customer support email describing the issue...",
+    refund: "Write a refund request email for the product...",
+    thanks: "Write a thank-you email appreciating...",
+    inquiry: "Write an inquiry email asking about...",
+    marketing: "Write a marketing email promoting...",
+    feedback: "Write a feedback email regarding..."
+  };
+
+  /* ⭐ Load Saved Templates */
+  function loadSavedTemplates() {
+    savedGroup.innerHTML = "";
+    const saved = JSON.parse(localStorage.getItem("mailKaroSavedTemplates") || "[]");
+
+    saved.forEach((t, i) => {
+      const option = document.createElement("option");
+      option.value = `saved_${i}`;
+      option.textContent = `⭐ ${t.name}`;
+      option.setAttribute("data-content", t.content);
+      savedGroup.appendChild(option);
+    });
+  }
+
+  loadSavedTemplates();
+
+  /* ⭐ Template Selection → Auto Fill */
+  templateSelect.addEventListener("change", () => {
+    const selected = templateSelect.value;
+
+    // Saved template
+    if (selected.startsWith("saved_")) {
+      const opt = templateSelect.options[templateSelect.selectedIndex];
+      const content = opt.getAttribute("data-content");
+      promptInput.value = content;
+    }
+    // Built-in template
+    else if (templates[selected]) {
+      promptInput.value = templates[selected];
+    }
+    else {
+      promptInput.value = "";
+    }
+
+    // Auto height adjust
+    promptInput.dispatchEvent(new Event("input"));
+  });
+
+  /* ⭐ Save Template to LocalStorage */
+  saveTemplateBtn.addEventListener("click", () => {
+    const text = promptInput.value.trim();
+    if (!text) {
+      saveTemplateBtn.innerText = "⚠️ Write something first";
+      setTimeout(() => (saveTemplateBtn.innerText = "💾 Save Template"), 1500);
+      return;
+    }
+
+    const name = prompt("Enter a name for this template:");
+
+    if (!name) return;
+
+    const saved = JSON.parse(localStorage.getItem("mailKaroSavedTemplates") || "[]");
+
+    saved.push({ name, content: text });
+
+    localStorage.setItem("mailKaroSavedTemplates", JSON.stringify(saved));
+
+    loadSavedTemplates();
+
+    saveTemplateBtn.innerText = "✓ Saved!";
+    setTimeout(() => (saveTemplateBtn.innerText = "💾 Save Template"), 1300);
+  });
 
   /* ⭐ Counter — Prevent Duplicate */
   let counterBoxExisting = document.querySelector(".counter-box");
@@ -37,23 +124,24 @@ document.addEventListener("DOMContentLoaded", () => {
     promptInput.style.height = promptInput.scrollHeight + "px";
   });
 
-  /* ⭐ Common Disable Function */
+  /* ⭐ Disable All Inputs */
   function disableAll() {
     generateBtn.disabled = true;
     regenerateBtn.disabled = true;
     promptInput.disabled = true;
     toneSelect.disabled = true;
+    templateSelect.disabled = true;
 
     generateBtn.style.cursor = "not-allowed";
     regenerateBtn.style.cursor = "not-allowed";
   }
 
-  /* ⭐ Common Enable Function */
   function enableAll() {
     generateBtn.disabled = false;
     regenerateBtn.disabled = false;
     promptInput.disabled = false;
     toneSelect.disabled = false;
+    templateSelect.disabled = false;
 
     generateBtn.style.cursor = "pointer";
     regenerateBtn.style.cursor = "pointer";
@@ -77,21 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     disableAll();
     generateBtn.innerText = "🔄 Generating…";
-
-    // Spinner
-    if (!document.getElementById("email-spinner-style")) {
-      const s = document.createElement("style");
-      s.id = "email-spinner-style";
-      s.innerHTML = `
-      .email-spinner { display:inline-block; width:16px; height:16px;
-               border:2px solid rgba(255,255,255,0.2);
-               border-top-color:#EAEAEA; border-radius:50%;
-               animation:spin 1s linear infinite; margin-right:8px;
-               vertical-align:middle; }
-      @keyframes spin { to { transform: rotate(360deg); } }
-      `;
-      document.head.appendChild(s);
-    }
 
     outputText.innerHTML =
       '<span class="email-spinner"></span><span>✉️ Generating your email...</span>';
@@ -126,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
     enableAll();
   };
 
-  /* ⭐ Button Clicks */
+  /* ⭐ Button Actions */
   generateBtn.addEventListener("click", () => generateEmail());
   regenerateBtn.addEventListener("click", () => {
     if (lastPrompt.trim() !== "") {

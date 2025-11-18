@@ -202,8 +202,38 @@
 <!-- ✅ Prompt & Output Section Start -->
 <section class="prompt-section" id="prompt">
   <div class="prompt-container">
+
     <h2 class="prompt-title">Generate Your Email Instantly</h2>
     <p class="prompt-subtitle">Enter your topic or idea below and let AI craft a perfect email for you.</p>
+
+    <!-- ⭐ Template Selector -->
+    <div class="template-box">
+      <label for="templateSelect">Template:</label>
+      <select id="templateSelect">
+        <option value="">-- Select a Template --</option>
+        <option value="job">Job Application Email</option>
+        <option value="complaint">Complaint Email</option>
+        <option value="followup">Follow-Up Email</option>
+        <option value="leave">Leave Request Email</option>
+        <option value="apology">Apology Email</option>
+        <option value="meeting">Meeting Request Email</option>
+        <option value="offer">Offer Acceptance Email</option>
+        <option value="resignation">Resignation Email</option>
+        <option value="reminder">Gentle Reminder Email</option>
+        <option value="support">Customer Support Email</option>
+        <option value="refund">Refund Request Email</option>
+        <option value="thanks">Thank-You Email</option>
+        <option value="inquiry">General Inquiry Email</option>
+        <option value="marketing">Marketing Email</option>
+        <option value="feedback">Feedback Email</option>
+
+        <!-- ⭐ Saved Templates appear here via JS -->
+        <optgroup label="Your Saved Templates" id="savedTemplatesGroup"></optgroup>
+      </select>
+
+      <!-- Save Template Button -->
+      <button id="saveTemplateBtn" class="ghost-btn" style="padding:8px 16px;">💾 Save Template</button>
+    </div>
 
     <div class="prompt-box">
       <textarea id="promptInput" placeholder="e.g. Follow up after meeting with client..." rows="1"></textarea>
@@ -246,7 +276,6 @@
   </div>
 </section>
 <!-- ✅ Prompt & Output Section End -->
-
 
 
 <!-- ✅ Footer Section Start -->

@@ -244,3 +244,223 @@
 .counter-box span {
   color: var(--text-muted);
 }
+
+/* =========================================
+   RESPONSIVE DESIGN – MOBILE OPTIMIZATION
+   ========================================= */
+
+/* For screens below 768px (Tablets + Mobiles) */
+@media (max-width: 768px) {
+
+  .prompt-section {
+    padding: 60px 15px;
+  }
+
+  .prompt-title {
+    font-size: 1.8rem;
+  }
+
+  .prompt-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  /* Stack textarea + button */
+  .prompt-box {
+    flex-direction: column;
+  }
+
+  .prompt-box textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .prompt-box button {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+    font-size: 1.05rem;
+  }
+
+  /* Output box spacing */
+  .output-box {
+    padding: 16px;
+  }
+
+  /* Output header — stack on mobile */
+  .output-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .output-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .output-header button {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Action buttons wrap cleanly */
+  .action-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ghost-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  /* Tone selector — stack */
+  .tone-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tone-box select {
+    width: 100%;
+    padding: 12px;
+  }
+
+  /* Counter alignment */
+  .counter-box {
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra small screens below 480px */
+@media (max-width: 480px) {
+
+  .prompt-title {
+    font-size: 1.6rem;
+  }
+
+  .prompt-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .prompt-box textarea {
+    min-height: 90px;
+    font-size: 0.95rem;
+  }
+
+  .prompt-box button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .output-box {
+    padding: 14px;
+  }
+}
+
+/* ================================
+   TEMPLATE SELECTOR UI
+   ================================ */
+
+.template-box {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-start;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.template-box {
+  margin-top: 25px;
+  margin-bottom: 18px; /* ⭐ Add this gap */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-start;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+
+.template-box label {
+  font-weight: 600;
+  color: var(--accent);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.template-box select {
+  background-color: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  outline: none;
+}
+
+.template-box select:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(255,215,0,0.25);
+}
+
+/* Save Template Button style match with ghost-btn */
+#saveTemplateBtn {
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.25s ease;
+}
+
+#saveTemplateBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255,215,0,0.25);
+}
+
+[data-theme="light"] #saveTemplateBtn {
+  border-color: rgba(0,0,0,0.35);
+  color: #000;
+}
+
+/* ================================
+   MOBILE RESPONSIVE — TEMPLATE BOX
+   ================================ */
+@media (max-width: 768px) {
+  .template-box {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .template-box select {
+    width: 100%;
+  }
+
+  #saveTemplateBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .template-box {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 15px; /* ⭐ Mobile gap */
+  }
+
+}
