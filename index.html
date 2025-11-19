@@ -250,18 +250,34 @@
       <span id="wordCount">0 words</span>
     </div>
 
-    <!-- ⭐ Tone Selector Dropdown -->
-    <div class="tone-box">
-      <label for="toneSelect">Tone:</label>
-      <select id="toneSelect">
-        <option value="formal">Formal</option>
-        <option value="friendly">Friendly</option>
-        <option value="polite">Polite</option>
-        <option value="confident">Confident</option>
-        <option value="casual">Casual</option>
-        <option value="apologetic">Apologetic</option>
-      </select>
-    </div>
+    <!-- ⭐ Tone + Email Length Selector -->
+<div class="tone-box">
+
+  <!-- Tone -->
+  <div class="tone-item">
+    <label for="toneSelect">Tone:</label>
+    <select id="toneSelect">
+      <option value="formal">Formal</option>
+      <option value="friendly">Friendly</option>
+      <option value="polite">Polite</option>
+      <option value="confident">Confident</option>
+      <option value="casual">Casual</option>
+      <option value="apologetic">Apologetic</option>
+    </select>
+  </div>
+
+  <!-- Length -->
+  <div class="length-item">
+    <label for="lengthSelect">Length:</label>
+    <select id="lengthSelect">
+      <option value="small">Small (100–150 words)</option>
+      <option value="medium">Medium (150–200 words)</option>
+      <option value="large">Large (200–250 words)</option>
+    </select>
+  </div>
+
+</div>
+
 
     <div class="output-box">
       <div class="output-header">
