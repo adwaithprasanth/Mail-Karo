@@ -184,10 +184,10 @@ Happy contributing! 🚀
 
 ---
 
-## 📫 Connect with the Founder
+## 📫 Connect with the Project Owner
 
 👤 **Adarsh Jayprakash Mishra**  
-Founder & Developer of **Mail Karo – AI Email Writer**
+Project Owner of **Mail Karo – AI Email Writer**
 
 🌐 **GitHub:** [Code-By-Adarsh](https://www.github.com/Code-By-Adarsh)  
 💼 **LinkedIn:** [Adarsh Jayprakash Mishra](https://www.linkedin.com/in/adarsh-jayprakash-mishra)  
