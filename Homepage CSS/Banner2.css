@@ -2,8 +2,7 @@
 .mk-pdf-hero {
     width: 100%;
     padding: 5rem 1rem;
-    background: radial-gradient(circle at 15% 25%, rgba(255, 215, 0, 0.06), transparent 60%),
-                radial-gradient(circle at 85% 80%, rgba(255, 215, 0, 0.08), transparent 65%);
+    /* background removed -> handled by wrapper */
     position: relative;
     overflow: hidden;
 }
@@ -16,7 +15,8 @@
     justify-content: space-between;
     gap: 3.5rem;
     animation: fadeInUp 1s ease;
-    padding: 0 15px;   /* 👈 mobile fix */
+    padding: 0 15px;
+    /* 👈 mobile fix */
 }
 
 /* Flex equal width for both sides */
@@ -40,7 +40,8 @@
     font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 1.8rem;
-    max-width: 100%;      /* 👈 FIX */
+    max-width: 100%;
+    /* 👈 FIX */
 }
 
 .mk-pdf-text strong {
@@ -49,16 +50,16 @@
 
 /* CTA BUTTON */
 .mk-btn.mk-pdf-btn {
-  display: inline-block;
-  margin-top: 30px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
-  color: #000;
-  font-weight: 700;
-  padding: 12px 26px;
-  border-radius: 10px;
-  text-decoration: none;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
-  transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 30px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+    color: #000;
+    font-weight: 700;
+    padding: 12px 26px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    transition: all 0.3s ease;
 }
 
 /* IMAGE */

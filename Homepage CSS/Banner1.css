@@ -2,8 +2,7 @@
 .mk-hero {
     width: 100%;
     padding: 5rem 1rem;
-    background: radial-gradient(circle at 15% 25%, rgba(255, 215, 0, 0.06), transparent 60%),
-                radial-gradient(circle at 85% 80%, rgba(255, 215, 0, 0.08), transparent 65%);
+    /* background removed -> handled by wrapper */
     position: relative;
     overflow: hidden;
 }
@@ -29,6 +28,7 @@
 .mk-hero-image {
     order: 1;
 }
+
 .mk-hero-text {
     order: 2;
 }
@@ -75,21 +75,21 @@
 
 /* CTA BUTTON */
 .mk-btn {
-  display: inline-block;
-  margin-top: 30px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
-  color: #000;
-  font-weight: 700;
-  padding: 12px 26px;
-  border-radius: 10px;
-  text-decoration: none;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
-  transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 30px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+    color: #000;
+    font-weight: 700;
+    padding: 12px 26px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    transition: all 0.3s ease;
 }
 
 .mk-btn:hover {
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
-  transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+    transform: translateY(-4px);
 }
 
 /* ------------------------------------------------------ */
@@ -99,7 +99,8 @@
 @media (max-width: 850px) {
 
     .mk-hero-content {
-        flex-direction: column; /* normal column */
+        flex-direction: column;
+        /* normal column */
         text-align: center;
         gap: 2.5rem;
     }
