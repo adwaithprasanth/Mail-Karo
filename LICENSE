@@ -3,12 +3,28 @@ Business Source License 1.1
 Parameters
 Licensor: Adarsh Jayprakash Mishra
 Licensed Work: Mail Karo
-Change Date: 2028-01-01
 Change License: MIT License
+Change Date: 2030-01-01
 
 Terms
-The Licensor hereby grants you the right to copy, modify, and distribute the Licensed Work for non-commercial purposes.
+The Licensor hereby grants you the right to copy, modify, and distribute the Licensed Work for non-commercial purposes, subject to the following conditions:
 
-Any commercial use in production requires a commercial license from the Licensor.
+1. Non-Commercial Use Only  
+   You may use, copy, modify, and distribute the Licensed Work for personal, educational, research, or non-commercial open-source purposes.
 
-After the Change Date, the Licensed Work will be made available under the Change License.
+2. Commercial Use Requires Separate License  
+   Any use of the Licensed Work in a commercial context — including production deployments, SaaS offerings, paid services, or any monetized product — requires a separate commercial license obtained directly from the Licensor.
+
+3. No Liability  
+   The Licensed Work is provided “as is”, without warranties of any kind, express or implied.
+
+4. No Trademark Rights  
+   This license does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor.
+
+Change Date Effect
+On the Change Date, the Licensed Work will be automatically and permanently re-licensed under the Change License specified above.  
+All versions of the Licensed Work released before the Change Date remain under this Business Source License 1.1.
+
+Additional Notices
+Copyright © 2025–2030 Adarsh Jayprakash Mishra
+All rights reserved.
