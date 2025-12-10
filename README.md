@@ -1,5 +1,5 @@
 # 💌 Mail Karo - AI Email Assistant
-![Banner](https://github.com/Code-By-Adarsh/Mail-Karo/blob/main/All%20Images%2FBanner.png )
+![Banner](https://github.com/Code-By-Adarsh/Mail-Karo/blob/9beeb5108bd691c3a074da363d7a117f34b1cd6f/All%20Images/Mail%20Karo%20Banner%20Beta%202.jpg)
 <br>
 # 🇮🇳 India’s First Community-Driven AI Email Assistant — **Mail Karo**
 
