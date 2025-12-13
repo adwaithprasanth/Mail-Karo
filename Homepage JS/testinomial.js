@@ -55,7 +55,77 @@ const testimonialsData = [
     img: "https://i.pravatar.cc/80?img=47",
     text:
       "I regularly collaborate with brands, agencies, and other creators, and a lot of those relationships start with one good email. Mail Karo helps me introduce myself clearly, pitch my ideas with structure, and respond gracefully to feedback. It makes my communication feel polished without losing my personal voice."
-  }
+  },
+  {
+  name: "Rohit Mehta",
+  role: "Startup Founder",
+  img: "https://i.pravatar.cc/80?img=12",
+  text:
+    "As a startup founder, I communicate daily with investors, clients, and partners, and every conversation begins with a strong email. Mail Karo helps me present my ideas clearly, structure proposals better, and reply professionally under pressure. It keeps my communication confident while saving valuable time."
+},
+{
+  name: "Sneha Iyer",
+  role: "HR Recruiter",
+  img: "https://i.pravatar.cc/80?img=32",
+  text:
+    "Recruiting involves constant communication with candidates, hiring managers, and teams, and emails play a huge role in that process. Mail Karo helps me write clear outreach messages, polite follow-ups, and rejection emails with the right tone. It keeps everything professional and human."
+},
+{
+  name: "Aman Verma",
+  role: "Freelance Web Developer",
+  img: "https://i.pravatar.cc/80?img=15",
+  text:
+    "Working with clients means explaining technical concepts and project updates through emails almost every day. Mail Karo helps me organize my thoughts, write structured proposals, and respond clearly to client questions. It makes my communication sound professional without feeling complicated."
+},
+{
+  name: "Pooja Nair",
+  role: "Marketing Executive",
+  img: "https://i.pravatar.cc/80?img=44",
+  text:
+    "Marketing requires constant coordination with teams, partners, and clients, and emails are at the center of it all. Mail Karo helps me write campaign emails, feedback responses, and follow-ups with clarity and purpose. It keeps my messages polished and easy to understand."
+},
+{
+  name: "Karan Singh",
+  role: "MBA Student",
+  img: "https://i.pravatar.cc/80?img=21",
+  text:
+    "From internship applications to formal academic communication, writing the right email matters a lot. Mail Karo helps me express my intent clearly, maintain a professional tone, and respond confidently to opportunities. It makes my emails sound mature and well thought out."
+},
+{
+  name: "Neha Kulkarni",
+  role: "Product Manager",
+  img: "https://i.pravatar.cc/80?img=29",
+  text:
+    "My role involves aligning multiple teams, sharing updates, and resolving issues through email communication. Mail Karo helps me structure my messages, highlight key points, and respond thoughtfully to feedback. It reduces misunderstandings and keeps communication smooth."
+},
+{
+  name: "Arjun Patel",
+  role: "Sales Executive",
+  img: "https://i.pravatar.cc/80?img=9",
+  text:
+    "Sales conversations often start and continue through emails, and clarity makes all the difference. Mail Karo helps me introduce myself professionally, pitch offerings clearly, and follow up without sounding repetitive. It makes my sales communication more effective."
+},
+{
+  name: "Ishita Banerjee",
+  role: "UX Designer",
+  img: "https://i.pravatar.cc/80?img=38",
+  text:
+    "Design work involves explaining ideas, decisions, and feedback to clients and teams through emails. Mail Karo helps me communicate design thinking clearly, respond constructively, and keep conversations smooth. It improves collaboration without overcomplicating communication."
+},
+{
+  name: "Vikram Rao",
+  role: "Operations Manager",
+  img: "https://i.pravatar.cc/80?img=18",
+  text:
+    "Managing operations requires clear communication with multiple stakeholders on a daily basis. Mail Karo helps me write structured updates, clarify action items, and respond professionally to concerns. It keeps my emails clear, focused, and reliable."
+},
+{
+  name: "Aditi Sharma",
+  role: "Graduate Student",
+  img: "https://i.pravatar.cc/80?img=26",
+  text:
+    "Academic and professional communication often depends on how well an email is written. Mail Karo helps me introduce myself confidently, explain my queries clearly, and respond politely to professors and recruiters. It makes my emails sound refined and confident."
+}
 ];
 
 // Expand to exactly 20 entries
