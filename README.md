@@ -32,23 +32,44 @@ Every contribution counts. ❤️
 ## Current Platform Status
 Below are the actual screenshots of Mail Karo platform that describe its structure and function.
 
-### Email Generation Feature by AI
-![Email feature](https://github.com/Code-By-Adarsh/Mail-Karo/blob/main/All%20Images%2FEmail%20Generation%20feature.png)
+## ❤️Homepage
+<img src="All Images/Homepage Banner.png" alt="Homepage" width="100%" />
 
-### Pdf Conveter & Downloader
-![PDF converter and Downloader](https://github.com/Code-By-Adarsh/Mail-Karo/blob/1b56c0d4457dd70dcf2a05b3b5b0a64151d780d7/All%20Images/Pdf%20converter%20%26%20downloader.png)
+## ❤️Banner1
+<img src="All Images/Banner1.png" alt="Banner1" width="100%" />
 
-### Current Features
-![Current features](https://github.com/Code-By-Adarsh/Mail-Karo/blob/1b56c0d4457dd70dcf2a05b3b5b0a64151d780d7/All%20Images/Upcoming-features.png)
+## ❤️Banner2
+<img src="All Images/Banner2.png" alt="Banner2" width="100%" />
 
-### Upcoming Features
-![Upcoming features](https://github.com/Code-By-Adarsh/Mail-Karo/blob/1b56c0d4457dd70dcf2a05b3b5b0a64151d780d7/All%20Images/Screenshot%202025-11-22%20195721.png)
+## ❤️AI Email Generation Service
+<img src="All Images/Email Generation Section.png" alt="AI Email Generation" width="100%" />
 
-### FAQ
-![FAQ](https://github.com/Code-By-Adarsh/Mail-Karo/blob/1b56c0d4457dd70dcf2a05b3b5b0a64151d780d7/All%20Images/FAQ.png)
+### ❤️Pdf Conveter & Downloader
+<img src="All Images/Pdf converter & downloader.png" alt="Pdf Converter & Downloader" width="100%" />
 
-### Contact Us 
-![Contact Us](https://github.com/Code-By-Adarsh/Mail-Karo/blob/main/All%20Images%2FConatct%20Us.png)
+## ❤️Current Features
+<img src="All Images/Current Features.png" alt="Current Features" width="100%" />
+
+## ❤️Upcoming Features
+<img src="All Images/Upcoming Features.png" alt="Upcoming Features" width="100%" />
+
+## ❤️Testinomials
+<img src="All Images/Testinomials.png" alt="Testinomials" width="100%" />
+
+## ❤️FAQ
+<img src="All Images/FAQ.png" alt="FAQ" width="100%" />
+
+## ❤️Footer
+<img src="All Images/Footer.png" alt="Footer" width="100%" />
+
+## ❤️Contact Us
+<img src="All Images/ContactUs.png" alt="Contact Us" width="100%" />
+
+## ❤️Privacy Policy
+<img src="All Images/Privacy Policy.png" alt="Privacy Policy" width="100%" />
+
+## ❤️Terms of Service
+<img src="All Images/Terms of Service.png" alt="Terms of Service" width="100%" />
 
 ---
 
