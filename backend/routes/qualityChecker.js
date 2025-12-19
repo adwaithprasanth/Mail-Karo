@@ -3,137 +3,115 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const router = express.Router();
 
-/**
- * POST /api/quality-check
- * Performs QA-grade analysis on an email:
- * Grammar, clarity, tone, and risk detection
- */
 router.post('/quality-check', async (req, res) => {
   try {
-    // 1️⃣ API key validation (server-side only)
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-      console.error('❌ GEMINI_API_KEY missing');
-      return res.status(500).json({
-        success: false,
-        error: 'Server configuration error'
-      });
+      return res.json(fallbackReport("Server config error"));
     }
 
-    // 2️⃣ Input validation
-    const { email } = req.body;
+    const { email, checkType = "normal" } = req.body;
 
     if (typeof email !== 'string' || !email.trim()) {
-      return res.status(400).json({
-        success: false,
-        error: 'Email content is required'
-      });
+      return res.json(fallbackReport("Email content missing"));
     }
 
-    // 3️⃣ Email length guard (VERY IMPORTANT)
     if (email.length > 6000) {
-      return res.status(413).json({
-        success: false,
-        error: 'Email too long. Please keep it under 6000 characters.'
-      });
+      return res.json(fallbackReport("Email too long"));
     }
 
-    // 4️⃣ Initialize Gemini
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({
       model: 'gemini-2.5-flash-lite'
     });
 
-    // 5️⃣ QA-focused prompt (STRICT + JSON ONLY)
-    const qualityPrompt = `
-You are a strict QA email reviewer, not a writer.
+    // 🔥 MODE-WISE STRICT PROMPT
+    const prompt = `
+You are an Email Quality Assurance system.
 
-Analyze the email below and return ONLY valid JSON.
-Do NOT add explanations, markdown, or extra text.
+Checking Mode: ${checkType}
 
-Your task:
-- Evaluate grammar quality
-- Evaluate clarity and structure
-- Evaluate tone and professionalism
-- Detect risky, aggressive, or unsafe wording
+Return ONLY valid JSON. No markdown. No text outside JSON.
 
-Rules:
-- Be objective and critical
-- Do NOT rewrite the email
-- Do NOT praise unnecessarily
-- Base feedback on real professional standards
-
-Return JSON in this EXACT format:
-
+Schema:
 {
-  "score": number (0-100),
+  "score": number,
+  "severity": "Low" | "Medium" | "High",
   "summary": string,
   "grammar": string,
   "clarity": string,
   "tone": string,
   "risk": string,
-  "issues": [
-    {
-      "type": "grammar | clarity | tone | risk",
-      "message": string
-    }
-  ]
+  "suggestions": string,
+  "improvedEmail": string
 }
 
-EMAIL TO REVIEW:
+Mode rules:
+- normal: grammar + clarity only
+- medium: tone + professionalism + risk
+- advanced: deep risk + rewrite full improved email
+
+Rules:
+- All keys MUST exist
+- score between 0–100
+- If not advanced, improvedEmail MUST be empty string
+
+EMAIL:
 """${email}"""
 `.trim();
 
-    // 6️⃣ Run quality analysis
-    const result = await model.generateContent(qualityPrompt);
-    const response = await result.response;
-    const rawText = response.text();
+    const result = await model.generateContent(prompt);
+    const rawText = result.response.text();
 
-    // 7️⃣ Safe JSON parsing
     let parsed;
     try {
-      parsed = JSON.parse(rawText);
-    } catch (parseError) {
-      console.error('❌ Invalid JSON from Gemini:', rawText);
-      return res.status(502).json({
-        success: false,
-        error: 'AI returned an invalid response. Please try again.'
-      });
+      const match = rawText.match(/\{[\s\S]*\}/);
+      if (!match) throw new Error("No JSON found");
+      parsed = JSON.parse(match[0]);
+    } catch (e) {
+      console.error("❌ Gemini JSON error:", rawText);
+      return res.json(fallbackReport("AI response issue"));
     }
 
-    // 8️⃣ Final response (clean + controlled)
+    // 🔒 HARD NORMALIZATION (NO MISSING KEYS)
+    const score = Number(parsed.score) || 0;
+
     return res.json({
-      success: true,
-      report: parsed
+      score,
+
+      // 🔥 SEVERITY AUTO-FIX (CRITICAL)
+      severity:
+        parsed.severity ||
+        (score >= 80 ? "Low" : score >= 60 ? "Medium" : "High"),
+
+      summary: parsed.summary || "No summary provided.",
+      grammar: parsed.grammar || "N/A",
+      clarity: parsed.clarity || "N/A",
+      tone: parsed.tone || "N/A",
+      risk: parsed.risk || "N/A",
+      suggestions: parsed.suggestions || "",
+      improvedEmail:
+        checkType === "advanced" ? parsed.improvedEmail || "" : ""
     });
 
-  } catch (error) {
-    console.error('🔥 Email quality check failed:', error);
-
-    // Known Gemini errors
-    if (error.message?.includes('API_KEY')) {
-      return res.status(401).json({
-        success: false,
-        error: 'AI service authentication failed'
-      });
-    }
-
-    if (
-      error.message?.includes('quota') ||
-      error.message?.includes('rate')
-    ) {
-      return res.status(429).json({
-        success: false,
-        error: 'Too many requests. Please try again later.'
-      });
-    }
-
-    // Generic fallback (NO internal leak)
-    return res.status(500).json({
-      success: false,
-      error: 'Failed to analyze email quality. Please try again.'
-    });
+  } catch (err) {
+    console.error("🔥 Quality check failed:", err);
+    return res.json(fallbackReport("Unexpected error"));
   }
 });
+
+function fallbackReport(reason) {
+  return {
+    score: 0,
+    severity: "High",
+    summary: `Unable to analyze email (${reason}).`,
+    grammar: "N/A",
+    clarity: "N/A",
+    tone: "N/A",
+    risk: "N/A",
+    suggestions: "",
+    improvedEmail: ""
+  };
+}
 
 export default router;

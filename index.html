@@ -432,42 +432,67 @@
   </section>
   <!-- ✅ Prompt & Output Section End -->
 
- <section class="quality-isolated">
-  <div class="quality-wrapper">
-    <div class="quality-checker">
+<section class="quality-section" id="quality-checker">
+  <div class="quality-container">
 
-      <h2 class="qc-title">🛡️ AI Email Quality Checker</h2>
-      <p class="qc-subtitle">
-        QA-grade analysis of grammar, clarity, tone, and risk — before you send.
-      </p>
+    <h2 class="quality-title">AI Email Quality Checker</h2>
+    <p class="quality-subtitle">
+      Analyze your email for grammar, clarity, tone, and risk before sending.
+    </p>
 
-      <label class="qc-label">Check Email From</label>
-      <select id="emailSource" class="qc-select">
-        <option value="generated">Use Generated Email</option>
-        <option value="manual">Paste My Own Email</option>
-      </select>
+    <!-- Checking Type -->
+    <div class="quality-options">
+      <div class="quality-option">
+        <label for="checkTypeSelect">Select Mode:</label>
+        <select id="checkTypeSelect">
+          <option value="normal">Normal</option>
+          <option value="medium">Medium</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+    </div>
 
+    <!-- Input -->
+    <div class="quality-input-box">
       <textarea
         id="qualityInput"
-        class="qc-textarea"
-        placeholder="Paste the email you want to review..."
+        placeholder="Paste the email you want to review here..."
+        rows="3"
       ></textarea>
+      <button id="checkBtn">🛡️ Check</button>
+    </div>
 
-      <div class="qc-meta">
-        <span id="charCount">0 chars</span> •
-        <span id="wordCount">0 words</span>
+    <!-- Total Time -->
+    <div class="quality-timer">
+      <span id="totalTime">Total Time: 0s</span>
+    </div>
+
+    <!-- Output -->
+    <div class="quality-output-box">
+      <div class="quality-output-header">
+        <h3>Email Quality Report</h3>
       </div>
 
-      <button id="runQualityCheck" class="qc-btn">
-        ⚡ Run Quality Check
-      </button>
+      <p id="qualityOutput">
+        Your AI Email Quality Check Report will appear here...
+      </p>
 
-      <div id="qualityResult" class="qc-result hidden"></div>
-
+      <div class="quality-actions">
+        <div class="quality-mode-inline">
+  <label for="checkTypeSelectMirror">Select Mode:</label>
+  <select id="checkTypeSelectMirror">
+    <option value="normal">Normal</option>
+    <option value="medium">Medium</option>
+    <option value="advanced">Advanced</option>
+  </select>
+</div>
+        <button class="quality-ghost-btn" id="recheckBtn">🔁 Rechecking</button>
+        <button class="quality-ghost-btn" id="resetQualityBtn">🧹 Reset</button>
+      </div>
     </div>
+
   </div>
 </section>
-
 
   <!-- PDF converter section -->
   <section id="mk-instant-pdf" class="mk-instant-pdf">

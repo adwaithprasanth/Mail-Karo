@@ -1,106 +1,199 @@
 /* ===============================
-   HARD ISOLATION LAYER
+   QUALITY CHECKER – ISOLATED UI
 ================================ */
 
-.quality-isolated {
-  width: 100%;
-  position: relative;      /* 🔒 isolate stacking context */
-  isolation: isolate;      /* 🔥 MOST IMPORTANT */
-  margin: 80px 0;          /* controlled spacing */
-}
-
-/* ===============================
-   CENTERING WRAPPER
-================================ */
-
-.quality-wrapper {
-  width: 100%;
+.quality-section {
+  background-color: var(--bg);
+  padding: 80px 20px;
   display: flex;
   justify-content: center;
-  padding: 0 16px;
 }
 
-/* ===============================
-   MAIN CONTAINER
-================================ */
-
-.quality-checker {
+.quality-container {
   width: 100%;
-  max-width: 1200px;
-  background: #0b0b0b;
-  border: 1px solid #222;
-  border-radius: 16px;
-  padding: 32px;
-  box-sizing: border-box;
-
-  /* 🔒 internal layout control */
-  overflow: hidden;
+  max-width: 900px;
+  text-align: center;
+  color: var(--text);
 }
 
-/* Box sizing safety */
-.quality-checker *,
-.quality-checker *::before,
-.quality-checker *::after {
-  box-sizing: border-box;
+/* Heading */
+.quality-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(255,215,0,0.3);
 }
 
-/* ===============================
-   CONTENT STYLES
-================================ */
-
-.qc-title {
-  color: #ffd700;
-  margin-bottom: 8px;
+.quality-subtitle {
+  color: var(--text-muted);
+  margin: 10px 0 40px;
+  font-size: 1.1rem;
 }
 
-.qc-subtitle {
-  color: #aaa;
-  margin-bottom: 24px;
+/* Options */
+.quality-options {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 18px;
 }
 
-.qc-label {
-  display: block;
-  margin-bottom: 6px;
-  color: #ccc;
+.quality-option {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.qc-select,
-.qc-textarea {
-  width: 100%;
-  max-width: 100%;
-  background: #111;
-  border: 1px solid #333;
-  color: #eee;
-  padding: 12px;
+.quality-option label {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.quality-option select {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 10px 14px;
   border-radius: 10px;
-  margin-bottom: 12px;
 }
 
-.qc-textarea {
-  min-height: 180px;
-  resize: vertical;
+/* Input Box */
+.quality-input-box {
+  display: flex;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255,215,0,0.08);
 }
 
-.qc-meta {
-  font-size: 12px;
-  color: #888;
-  margin-bottom: 20px;
-}
-
-.qc-btn {
-  background: #ffd700;
-  color: #000;
-  padding: 12px 28px;
-  border-radius: 12px;
+.quality-input-box textarea {
+  flex: 1;
+  padding: 16px;
   border: none;
-  font-weight: bold;
+  background: transparent;
+  color: var(--text);
+  resize: none;
+  min-height: 80px;
+  max-height: 250px;
+}
+
+.quality-input-box button {
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  color: #000;
+  font-weight: 700;
+  padding: 12px 28px;
+  border: none;
   cursor: pointer;
 }
 
-.qc-result {
-  margin-top: 32px;
+.quality-input-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(255,215,0,0.5);
 }
 
-.hidden {
-  display: none;
+/* Timer */
+.quality-timer {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: left;
+}
+
+/* Output */
+.quality-output-box {
+  margin-top: 40px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: left;
+}
+
+.quality-output-header h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent);
+}
+
+.quality-output-header {
+  margin-bottom: 14px; /* header ke niche clean gap */
+}
+
+#qualityOutput {
+  margin-top: 8px;
+  line-height: 1.8;
+}
+
+/* Actions */
+.quality-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.quality-score-badge {
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+  background: rgba(255,215,0,0.15);
+}
+
+
+.quality-mode-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.quality-mode-inline label {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.quality-mode-inline select {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+.quality-ghost-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.quality-ghost-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 12px rgba(255,215,0,0.25);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .quality-input-box {
+    flex-direction: column;
+  }
+
+  .quality-input-box button {
+    width: 100%;
+  }
+
+  .quality-actions {
+    flex-direction: column;
+  }
+
+  .quality-ghost-btn {
+    width: 100%;
+  }
 }
